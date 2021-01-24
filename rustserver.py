@@ -183,6 +183,7 @@ if args.command:
             server_info["enable_trace"] = False
             print(server_info)
         else:
+            print(args.command)
             print("Rust Server not installed")
             exit(1)
 print("")
