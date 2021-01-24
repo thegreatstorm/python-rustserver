@@ -38,7 +38,7 @@ def set_game_config(script_dir, config_settings, game_name):
         game_config.write(configfile)
 
     # App Configurations
-    config_settings.set('game_settings', 'current_game', game_name)
+    config_settings.set('game_settings', 'installed', game_name)
     config_settings.remove_section('general')
     config_dir = os.path.abspath(os.path.join(prefix_dir, "var/conf/"))
     # Writing our configuration file to 'example.ini'
