@@ -178,12 +178,10 @@ if args.command:
         print("--------------------------------------------------------")
         if game_installed != 'unset':
             game_config = get_game_config(prefix_dir, game_config, current_game)
-            result = json.dumps(game_config)
-            print(result)
             server_info = {}
             server_info["hostname"] = "0.0.0.0"
             server_info["rcon_port"] = "28016"
-            server_info["rcon_password"] = game_config.get('general', 'rcon_password')
+            server_info["rcon_password"] = game_config['rcon_password']
             server_info["enable_trace"] = False
             print(server_info)
             # connect_rust_rcon(server_info, args.command)
