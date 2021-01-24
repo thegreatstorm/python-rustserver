@@ -10,7 +10,7 @@ def argument_controller():
     parser.add_argument('-i', '--install', help='Install Rust Server', required=False, action='store_true')
     parser.add_argument('-u', '--update', help='Update Rust Server', required=False, action='store_true')
     parser.add_argument('-m', '--install_mod', help='Install Oxide', required=False, action='store_true')
-    parser.add_argument('-d', '--command', help='Run Rcon Command <command>', required=False, action='store_true')
+    parser.add_argument('-d', '--command', help='Run Rcon Command <command>', required=False)
     parser.add_argument('-p', '--partial_wipe', help='Clean up Maps', required=False, action='store_true')
     parser.add_argument('-w', '--full_wipe', help='Clean up everything!', required=False, action='store_true')
     parser.add_argument('-c', '--clean', help='Clean Rust Server (Y/N)', required=False, action='store_true')
