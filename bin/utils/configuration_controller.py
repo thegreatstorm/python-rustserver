@@ -31,7 +31,7 @@ def set_game_config(script_dir, config_settings, game_name):
     prefix_dir = os.path.abspath(os.path.join(script_dir))
 
     # Game Configuration
-    game_config = config_controller(script_dir, "lib/{}.conf".format(game_name), "local.conf")
+    game_config = config_controller(script_dir, "var/lib/{}.conf".format(game_name), "local.conf")
     server_dir = os.path.abspath(os.path.join(prefix_dir, "server/"))
     # Writing our configuration file to 'example.ini'
     with open('{}/conf/{}.conf'.format(server_dir, game_name), 'w') as configfile:
