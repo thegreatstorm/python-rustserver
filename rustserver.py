@@ -48,7 +48,6 @@ if args.run:
     print("Starting Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
-        game_name = args.run.lower()
         playbook_name = "start.yml"
         game_config = get_game_config(prefix_dir, game_config, current_game)
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
@@ -65,7 +64,6 @@ if args.install:
     print("Installing Rust Server: {}".format(current_game))
     print("--------------------------------------------------------")
     if game_installed == 'unset':
-        game_name = args.install.lower()
         playbook_name = "install.yml"
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
         try:
