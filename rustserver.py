@@ -172,6 +172,8 @@ if args.clean:
 
 if args.command:
     if args.command is not None:
+        print("Running Rust Command")
+        print("--------------------------------------------------------")
         if game_installed != 'unset':
             game_config = get_game_config(prefix_dir, game_config, current_game)
             server_info = {}
