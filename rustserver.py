@@ -7,6 +7,7 @@ import shutil
 from bin.utils.argument_controller import argument_controller
 from bin.utils.configuration_controller import config_controller, set_game_config, get_game_config
 from bin.server_manager import run_playbook
+from bin.utils.rust_rcon_connector import connect_rust_rcon
 
 
 # Grabs path where this script was ran.
@@ -182,6 +183,7 @@ if args.command:
             server_info["rcon_password"] = game_config.get('general', 'rcon_password')
             server_info["enable_trace"] = False
             print(server_info)
+            # connect_rust_rcon(server_info, args.command)
         else:
             print(args.command)
             print("Rust Server not installed")
