@@ -178,7 +178,6 @@ if args.command:
         print("--------------------------------------------------------")
         if game_installed != 'unset':
             game_config = get_game_config(prefix_dir, game_config, current_game)
-            print(game_config)
             result = json.dumps(game_config)
             print(result)
             server_info = {}
