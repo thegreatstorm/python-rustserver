@@ -183,8 +183,8 @@ if args.command:
             server_info["rcon_port"] = "28016"
             server_info["rcon_password"] = game_config['rcon_password']
             server_info["enable_trace"] = False
-            print(server_info)
-            # connect_rust_rcon(server_info, args.command)
+            # print(server_info)
+            connect_rust_rcon(server_info, args.command)
         else:
             print(args.command)
             print("Rust Server not installed")

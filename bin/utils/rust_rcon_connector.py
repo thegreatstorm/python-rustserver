@@ -33,9 +33,9 @@ def connect_rust_rcon(server_info, command):
         response = ws.recv()
         ws.close()
         response = json.loads(response)
-        return response["Message"]
+        print(response["Message"])
 
     except Exception as e:
         # Inform the user it was a failure to connect. provide Exception string for further diagnostics.
         response = "Failed to connect. {}".format(str(e))
-        return response
+        print(response)
