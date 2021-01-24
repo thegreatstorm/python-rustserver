@@ -1,0 +1,1 @@
+# list of all default scripts DON'T EDIT THESE CONFIGS

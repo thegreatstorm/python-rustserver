@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Updating Game Server"
+    shell: "{{app_dir}}/steam_install/./steamcmd.sh +login anonymous +force_install_dir {{app_dir}}/rustserver/ +app_update 258550 -validate +quit"

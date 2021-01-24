@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Remove server_identity"
+    file:
+      path: "{{app_dir}}/rustserver/server/*"
+      state: absent
