@@ -1,1 +1,2 @@
 configparser==4.0.2
+websocket-client==0.57.0
