@@ -44,7 +44,7 @@ print("========================================================".center(os.get_t
 print("")
 
 
-if args.run is not None:
+if args.run:
     print("Starting Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -61,7 +61,7 @@ if args.run is not None:
         print("Rust Server not installed.")
         exit(0)
 
-if args.install is not None:
+if args.install:
     print("Installing Rust Server: {}".format(current_game))
     print("--------------------------------------------------------")
     if game_installed == 'unset':
@@ -79,7 +79,7 @@ if args.install is not None:
         print("Rust Server not installed.")
         exit(0)
 
-if args.update is not None:
+if args.update:
     print("Updating Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -90,7 +90,7 @@ if args.update is not None:
         print("Rust Server not installed.")
         exit(1)
 
-if args.stop is not None:
+if args.stop:
     print("Stopping Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -101,7 +101,7 @@ if args.stop is not None:
         print("Rust Server not installed.")
         exit(1)
 
-if args.restart is not None:
+if args.restart:
     print("Restarting Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -119,7 +119,7 @@ if args.restart is not None:
         print("Rust Server not installed.")
         exit(1)
 
-if args.install_mod is not None:
+if args.install_mod:
     print("Installing Oxide")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -130,7 +130,7 @@ if args.install_mod is not None:
         print("Rust Server not installed.")
         exit(1)
 
-if args.partial_wipe is not None:
+if args.partial_wipe:
     print("Partial Wipe Wipe Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -141,7 +141,7 @@ if args.partial_wipe is not None:
         print("Rust Server not installed")
         exit(1)
 
-if args.full_wipe is not None:
+if args.full_wipe:
     print("Full Wipe Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
@@ -152,7 +152,7 @@ if args.full_wipe is not None:
         print("Rust Server not installed")
         exit(1)
 
-if args.clean is not None:
+if args.clean:
     print("Cleaning Server Directory")
     print("--------------------------------------------------------")
     # Removing Server Folder
