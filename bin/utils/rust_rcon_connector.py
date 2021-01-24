@@ -10,6 +10,7 @@ server_info["rcon_password"] = ""
 server_info["enable_trace"] = False
 """
 
+
 def connect_rust_rcon(server_info, command):
     # If you want to enable websocket for debugging.
     websocket.enableTrace(server_info["enable_trace"])
