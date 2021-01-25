@@ -198,18 +198,19 @@ if args.download_plugin:
         if game_installed != 'unset':
             plugin_name = args.download_plugin
             game_config = get_game_config(prefix_dir, game_config, current_game)
+
             server_info = {}
             server_info["hostname"] = "0.0.0.0"
             server_info["rcon_port"] = game_config['rcon_port']
             server_info["rcon_password"] = game_config['rcon_password']
             server_info["enable_trace"] = False
+
             # print(server_info)
-            connect_rust_rcon(server_info, "oxide.unload {}".format(args.download_plugin))
             playbook_name = "plugin_install.yml"
             playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
             game_config = '{"plugin_name":"' + plugin_name + '"}'
             print(game_config)
-            #run_playbook(playbook, game_config)
+            run_playbook(playbook, game_config)
         else:
             print(args.command)
             print("Rust Server not installed")
