@@ -11,6 +11,7 @@ from bin.utils.argument_controller import argument_controller
 from bin.utils.configuration_controller import config_controller, set_game_config, get_game_config
 from bin.server_manager import run_playbook
 from bin.utils.rust_rcon_connector import connect_rust_rcon
+from bin.server_manager import find_process
 
 # Grabs path where this script was ran.
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -215,4 +216,18 @@ if args.download_plugin:
             print(args.command)
             print("Rust Server not installed")
             exit(1)
+
+if args.check:
+    print("Checking Rust Server Is Running")
+    print("--------------------------------------------------------")
+    if game_installed != 'unset':
+        game_config = get_game_config(prefix_dir, game_config, current_game)
+        if find_process(game_config['hostname']):
+            print("Rust Server {} is running!".format(game_config['hostname']))
+        else:
+            print("Rust Server {} is down!".format(game_config['hostname']))
+    else:
+        print("Rust Server not installed.")
+        exit(1)
+
 print("")

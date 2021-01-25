@@ -7,7 +7,7 @@ def argument_controller():
     parser.add_argument('--install', help='Install Rust Server', required=False, action='store_true')
     parser.add_argument('--start', help='Run Rust Server', required=False, action='store_true')
     parser.add_argument('--stop', help='Stop Rust Server', required=False, action='store_true')
-    # parser.add_argument('-h', '--check', help='Check Running', required=False, action='store_true')
+    parser.add_argument('--check', help='Check Running', required=False, action='store_true')
     parser.add_argument('--restart', help='Restart Rust Server', required=False, action='store_true')
     parser.add_argument('--update', help='Update Rust Server', required=False, action='store_true')
     parser.add_argument('--install_mod', help='Install Oxide', required=False, action='store_true')
