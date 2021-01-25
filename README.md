@@ -36,4 +36,4 @@ Install ansible!
 * `--full_wipe`
     * Clean up everything!
 * `--clean`
-    * Wipes out Rust Server Completely
+    * Destroys server folder

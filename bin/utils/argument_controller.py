@@ -14,6 +14,6 @@ def argument_controller():
     parser.add_argument('--command', help='Run Rcon Command', required=False)
     parser.add_argument('--partial_wipe', help='Clean up Maps', required=False, action='store_true')
     parser.add_argument('--full_wipe', help='Clean up everything!', required=False, action='store_true')
-    parser.add_argument('--clean', help='Clean Rust Server', required=False, action='store_true')
+    parser.add_argument('--clean', help='Destroys server folder', required=False, action='store_true')
     args = parser.parse_args()
     return args
