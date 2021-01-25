@@ -11,7 +11,6 @@ from bin.utils.argument_controller import argument_controller
 from bin.utils.configuration_controller import config_controller, set_game_config, get_game_config
 from bin.server_manager import run_playbook
 from bin.utils.rust_rcon_connector import connect_rust_rcon
-from bin.utils.html_controller import url_exists
 
 # Grabs path where this script was ran.
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -198,9 +197,6 @@ if args.download_plugin:
         print("--------------------------------------------------------")
         if game_installed != 'unset':
             plugin_name = args.download_plugin
-            if not url_exists('http://www.umod.org', '/plugins/{}'.format(plugin_name)):
-                print("Plugin doesn't exist.")
-                exit(1)
             game_config = get_game_config(prefix_dir, game_config, current_game)
             server_info = {}
             server_info["hostname"] = "0.0.0.0"
