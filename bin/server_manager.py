@@ -13,8 +13,8 @@ def run_playbook(playbook, game_server_config):
     os.system(command)
 
 
-def find_process(process_name):
-  output = check_output('ps aux | grep -ie "' + process_name +'" | grep -v grep | awk \'{print $2}\'', shell=True)
+def find_process():
+  output = check_output('ps aux | grep -ie "RustDedicated" | grep -v grep | awk \'{print $2}\'', shell=True)
   if len(output.split()) > 0:
       return True
 

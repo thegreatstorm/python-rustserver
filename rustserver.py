@@ -221,7 +221,7 @@ if args.check:
     print("--------------------------------------------------------")
     if game_installed != 'unset':
         game_config = get_game_config(prefix_dir, game_config, current_game)
-        if find_process(game_config['hostname']):
+        if find_process():
             print("{} is running!".format(game_config['hostname']))
         else:
             print("{} is down!".format(game_config['hostname']))
