@@ -43,7 +43,6 @@ game_config["app_dir"] = app_directory
 print("Welcome to {}".format(app_name).center(os.get_terminal_size().columns))
 print(description.center(os.get_terminal_size().columns))
 print("<{}>".format(version).center(os.get_terminal_size().columns))
-print("Current Game Set: {}".format(current_game).center(os.get_terminal_size().columns))
 print("========================================================".center(os.get_terminal_size().columns))
 print("")
 
