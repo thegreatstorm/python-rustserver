@@ -48,7 +48,7 @@ print("========================================================".center(os.get_t
 print("")
 
 
-if args.run:
+if args.start:
     print("Starting Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
