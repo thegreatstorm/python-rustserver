@@ -28,7 +28,7 @@ def connect_rust_rcon(server_info, command):
     command_json = json.dumps(command_json)
 
     try:
-        ws.connect(server_uri)
+        ws.connect(server_uri, timeout=10)
         ws.send(command_json)
         response = ws.recv()
         ws.close()
