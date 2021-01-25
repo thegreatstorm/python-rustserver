@@ -15,7 +15,6 @@ def run_playbook(playbook, game_server_config):
 
 def find_process(process_name):
   output = check_output('ps aux | grep -ie "Rust Server" | grep -v grep | awk \'{print $2}\'', shell=True)
-  print(output.split())
   if len(output.split()) > 0:
       return True
 
