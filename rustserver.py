@@ -209,7 +209,6 @@ if args.download_plugin:
             playbook_name = "plugin_install.yml"
             playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
 
-            game_config = {}
             game_config["plugin_name"] = plugin_name
             run_playbook(playbook, game_config)
         else:
