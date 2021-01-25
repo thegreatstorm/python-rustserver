@@ -222,9 +222,9 @@ if args.check:
     if game_installed != 'unset':
         game_config = get_game_config(prefix_dir, game_config, current_game)
         if find_process(game_config['hostname']):
-            print("Rust Server {} is running!".format(game_config['hostname']))
+            print("{} is running!".format(game_config['hostname']))
         else:
-            print("Rust Server {} is down!".format(game_config['hostname']))
+            print("{} is down!".format(game_config['hostname']))
     else:
         print("Rust Server not installed.")
         exit(1)
