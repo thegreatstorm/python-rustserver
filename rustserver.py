@@ -198,7 +198,7 @@ if args.download_plugin:
         print("--------------------------------------------------------")
         if game_installed != 'unset':
             plugin_name = args.download_plugin
-            if not url_exists('https://www.umod.org', '/plugins/{}'.format(plugin_name)):
+            if not url_exists('https://umod.org', '/plugins/{}'.format(plugin_name)):
                 print("Plugin doesn't exist.")
                 exit(1)
             game_config = get_game_config(prefix_dir, game_config, current_game)
