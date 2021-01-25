@@ -19,7 +19,7 @@ Install ansible!
     * show this help message and exit
 * `--install`
     * Install Rust Server
-* `--run`
+* `--start`
     * Run Rust Server
 * `--stop`             
     * Stop Rust Server
