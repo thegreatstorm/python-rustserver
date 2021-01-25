@@ -37,5 +37,5 @@ def connect_rust_rcon(server_info, command):
 
     except Exception as e:
         # Inform the user it was a failure to connect. provide Exception string for further diagnostics.
-        response = "Failed to connect. {}".format(str(e))
+        response = "Failed: {}".format(str(e))
         print(response)
