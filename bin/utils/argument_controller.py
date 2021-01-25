@@ -11,6 +11,7 @@ def argument_controller():
     parser.add_argument('--restart', help='Restart Rust Server', required=False, action='store_true')
     parser.add_argument('--update', help='Update Rust Server', required=False, action='store_true')
     parser.add_argument('--install_mod', help='Install Oxide', required=False, action='store_true')
+    parser.add_argument('--download_plugin', help='DownloadPlugin', required=False)
     parser.add_argument('--command', help='Run Rcon Command', required=False)
     parser.add_argument('--partial_wipe', help='Clean up Maps', required=False, action='store_true')
     parser.add_argument('--full_wipe', help='Clean up everything!', required=False, action='store_true')

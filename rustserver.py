@@ -11,7 +11,7 @@ from bin.utils.argument_controller import argument_controller
 from bin.utils.configuration_controller import config_controller, set_game_config, get_game_config
 from bin.server_manager import run_playbook
 from bin.utils.rust_rcon_connector import connect_rust_rcon
-
+from bin.utils.html_controller import url_exists
 
 # Grabs path where this script was ran.
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -187,6 +187,33 @@ if args.command:
             server_info["enable_trace"] = False
             # print(server_info)
             connect_rust_rcon(server_info, args.command)
+        else:
+            print(args.command)
+            print("Rust Server not installed")
+            exit(1)
+
+if args.download_plugin:
+    if args.download_plugin is not None:
+        print("Download Plugin from Umod!")
+        print("--------------------------------------------------------")
+        if game_installed != 'unset':
+            plugin_name = args.download_plugin
+            if not url_exists('https://www.umod.org', '/plugins/{}'.format(plugin_name)):
+                print("Plugin doesn't exist.")
+                exit(1)
+            game_config = get_game_config(prefix_dir, game_config, current_game)
+            server_info = {}
+            server_info["hostname"] = "0.0.0.0"
+            server_info["rcon_port"] = game_config['rcon_port']
+            server_info["rcon_password"] = game_config['rcon_password']
+            server_info["enable_trace"] = False
+            # print(server_info)
+            connect_rust_rcon(server_info, "oxide.unload {}".format(args.download_plugin))
+            playbook_name = "plugin_install.yml"
+            playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
+            game_config = '{"plugin_name":"' + plugin_name + '"}'
+            print(game_config)
+            #run_playbook(playbook, game_config)
         else:
             print(args.command)
             print("Rust Server not installed")
