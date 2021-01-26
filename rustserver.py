@@ -95,6 +95,8 @@ if args.stop:
     print("Stopping Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
+        game_config = get_game_config(prefix_dir, game_config, current_game)
+        server_identity = game_config['identity']
         playbook_name = "stop.yml"
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
         run_playbook(playbook, game_config)
@@ -221,7 +223,8 @@ if args.check:
     print("--------------------------------------------------------")
     if game_installed != 'unset':
         game_config = get_game_config(prefix_dir, game_config, current_game)
-        if find_process():
+        server_identity = game_config['identity']
+        if find_process(server_identity):
             print("{} is running!".format(game_config['hostname']))
         else:
             print("{} is down!".format(game_config['hostname']))

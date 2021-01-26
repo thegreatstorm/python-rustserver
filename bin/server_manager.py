@@ -13,8 +13,9 @@ def run_playbook(playbook, game_server_config):
     os.system(command)
 
 
-def find_process():
-  output = check_output('ps aux | grep -ie "RustDedicated" | grep -v grep | awk \'{print $2}\'', shell=True)
+# Make sure server_identity is simple and has no spaces.
+def find_process(server_identity):
+  output = check_output('ps aux | grep -ie "' + server_identity +'" | grep -v grep | awk \'{print $2}\'', shell=True)
   if len(output.split()) > 0:
       return True
 

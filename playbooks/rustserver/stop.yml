@@ -2,4 +2,4 @@
 - hosts: localhost
   tasks:
   - name: "Stopping Rust Server!"
-    shell: ps aux | grep -ie RustDedicated | grep -v grep | awk '{print $2}' | xargs kill -9
+    shell: ps aux | grep -ie "{{server_identity}}" | grep -v grep | awk '{print $2}' | xargs kill -9
