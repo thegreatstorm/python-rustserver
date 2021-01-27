@@ -2,6 +2,4 @@
 - hosts: localhost
   tasks:
   - name: "Remove Map Files"
-    file:
-      path: "{{app_dir}}/rustserver/server/{{identity}}/proceduralmap*.map"
-      state: absent
+    shell: "rm -rf {{app_dir}}/rustserver/server/{{identity}}/proceduralmap*.map"
