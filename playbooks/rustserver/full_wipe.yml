@@ -1,7 +1,5 @@
 ---
 - hosts: localhost
   tasks:
-  - name: "Remove server_identity"
-    file:
-      path: "{{app_dir}}/rustserver/server/{{identity}}"
-      state: absent
+  - name: "Remove Map Files"
+    shell: "rm -rf {{app_dir}}/rustserver/server/{{identity}}"
