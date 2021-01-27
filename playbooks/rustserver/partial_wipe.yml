@@ -3,5 +3,5 @@
   tasks:
   - name: "Remove Map Files"
     file:
-      path: "{{app_dir}}/rustserver/server/*/*.map"
+      path: "{{app_dir}}/rustserver/server/{{identity}}/*.map"
       state: absent
