@@ -40,10 +40,10 @@ app_settings["app_directory"] = script_dir
 
 game_config = {}
 game_config["app_dir"] = app_directory
-print("Welcome to {}".format(app_name).center(os.get_terminal_size().columns))
-print(description.center(os.get_terminal_size().columns))
-print("<{}>".format(version).center(os.get_terminal_size().columns))
-print("========================================================".center(os.get_terminal_size().columns))
+print("Welcome to {}".format(app_name))
+print(description)
+print("<{}>".format(version))
+print("========================================================")
 print("")
 
 
