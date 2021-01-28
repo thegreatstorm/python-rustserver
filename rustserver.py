@@ -96,7 +96,6 @@ if args.stop:
     print("--------------------------------------------------------")
     if game_installed != 'unset':
         game_config = get_game_config(prefix_dir, game_config, current_game)
-        server_identity = game_config['identity']
         playbook_name = "stop.yml"
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
         run_playbook(playbook, game_config)
@@ -108,6 +107,8 @@ if args.restart:
     print("Restarting Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
+        game_config = get_game_config(prefix_dir, game_config, current_game)
+        server_identity = game_config['identity']
         playbook_name = "restart.yml"
         game_config = get_game_config(prefix_dir, game_config, current_game)
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
@@ -137,6 +138,8 @@ if args.partial_wipe:
     print("Partial Wipe Wipe Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
+        game_config = get_game_config(prefix_dir, game_config, current_game)
+        print("{}/rustserver/server/{}/*.map".format(game_config["app_dir"], game_config["identity"]))
         playbook_name = "partial_wipe.yml"
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
         run_playbook(playbook, game_config)
@@ -148,6 +151,7 @@ if args.full_wipe:
     print("Full Wipe Rust Server")
     print("--------------------------------------------------------")
     if game_installed != 'unset':
+        game_config = get_game_config(prefix_dir, game_config, current_game)
         playbook_name = "full_wipe.yml"
         playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
         run_playbook(playbook, game_config)

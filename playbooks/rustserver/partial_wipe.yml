@@ -2,6 +2,6 @@
 - hosts: localhost
   tasks:
   - name: "Remove Map Files"
-    file:
-      path: "{{app_dir}}/rustserver/server/*/*.map"
-      state: absent
+    shell: "rm -rf {{app_dir}}/rustserver/server/{{identity}}/*.map"
+  - name: "Remove Sav Files"
+    shell: "rm -rf {{app_dir}}/rustserver/server/{{identity}}/*.sav*"
