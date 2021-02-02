@@ -2,19 +2,15 @@
 Rust Server Automation Only!
 
 
-# Install Requirements
-Install ansible! 
-* Amazon Linux
-    * `sudo amazon-linux-extras install ansible2`
+## Install Requirements
+* Ansible
 * Python3
-    * `sudo yum install python3.x86_64`
+* Git
 
-### Python modules
+## Python modules
 `pip install -r requirements.txt`
 
-`pip3 install -r requirements.txt`
-
-# Commands
+## Commands
 * `-h, --help`
     * show this help message and exit
 * `--install`
@@ -29,6 +25,8 @@ Install ansible!
     * Update Rust Server
 * `--install_mod`
     * Install Oxide
+* `--download_plugin="plugin_name"`
+    * Downloads Plugin from umod
 * `--command`
     * Run Rcon Command
 * `--partial_wipe`
@@ -37,3 +35,9 @@ Install ansible!
     * Clean up everything!
 * `--clean`
     * Destroys server folder
+* `--check`
+    * Checks by server_identity if server is running.
+    
+## FAQ
+* Can this run inside a docker container?
+    * Yes I have tested this with centos 8 container and was successful.
