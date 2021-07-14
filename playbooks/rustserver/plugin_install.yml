@@ -4,5 +4,7 @@
   - name: "Download Plugin"
     get_url:
       url: http://umod.org/plugins/{{plugin_name}}.cs
-      dest: "{{app_dir}}/rustserver/oxide/plugins/{{plugin_name}}.cs"
+      dest: "{{app_dir}}/downloads/{{plugin_name}}.cs"
       mode: '0750'
+  - name: "Installing Plugin"
+    command: "mv {{app_dir}}/downloads/{{plugin_name}}.cs {{app_dir}}/rustserver/oxide/plugins/{{plugin_name}}.cs"
