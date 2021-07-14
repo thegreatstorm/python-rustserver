@@ -6,6 +6,7 @@ Rust Server Automation Only!
 * Ansible
 * Python3
 * Git
+* Unzip
 
 ## Python modules
 `pip install -r requirements.txt`
