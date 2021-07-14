@@ -175,6 +175,7 @@ if args.clean:
             print("Cleaned Settings")
         else:
             os.makedirs(server_dir + "/conf")
+            os.makedirs(server_dir + "/downloads")
             print("Cleaned Settings")
     except OSError as error:
         print("Failed to Clean OSError: ".format(str(error)))
