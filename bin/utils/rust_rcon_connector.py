@@ -21,11 +21,12 @@ def connect_rust_rcon(server_info, command):
     # Standard format for connection. Used dict to make it easier to modify and read.
     command_json = {}
     command_json["Identifier"] = 1
-    command_json["Message"] = command
+    command_json["Message"] = "serverinfo"
     command_json["Name"] = "WebRcon"
 
     # It takes string json in the websocket call. Convert to string json using json.dumps
     command_json = json.dumps(command_json)
+    print(command_json)
 
     try:
         ws.connect(server_uri, timeout=10)
