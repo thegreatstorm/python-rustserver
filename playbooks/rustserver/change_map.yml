@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+  - name: "Changing Seed Rust Server"
+    shell: sed -i -E 's/\bseed\s=\s[[:digit:]]+/seed = {{seed}}/g' {{app_dir}}/conf/rustserver.conf
+  - name: "Changing Size Rust Server"
+    shell: sed -i -E 's/\bworldsize\s=\s[[:digit:]]+/worldsize = {{size}}/g' {{app_dir}}/conf/rustserver.conf

@@ -206,13 +206,6 @@ if args.download_plugin:
             plugin_name = args.download_plugin
             game_config = get_game_config(prefix_dir, game_config, current_game)
 
-            server_info = {}
-            server_info["hostname"] = "0.0.0.0"
-            server_info["rcon_port"] = game_config['rcon_port']
-            server_info["rcon_password"] = game_config['rcon_password']
-            server_info["enable_trace"] = False
-
-            # print(server_info)
             playbook_name = "plugin_install.yml"
             playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
 
@@ -222,6 +215,30 @@ if args.download_plugin:
             print(args.command)
             print("Rust Server not installed")
             exit(1)
+
+if args.change_map:
+    if args.change_map is not None:
+        print("Change Map Settings -- This won't reflect unless an restart")
+        print("--------------------------------------------------------")
+        if game_installed != 'unset':
+            if args.seed is None or args.size is None:
+                print("You must put --seed=\"\" --size=\"\" to change map settings")
+                exit(1)
+            seed = args.seed
+            size = args.size
+            game_config = get_game_config(prefix_dir, game_config, current_game)
+
+            playbook_name = "change_map.yml"
+            playbook = os.path.abspath(os.path.join(prefix_dir, "playbooks/{}/{}".format(current_game, playbook_name)))
+
+            game_config["seed"] = args.seed
+            game_config["size"] = args.size
+            run_playbook(playbook, game_config)
+        else:
+            print(args.command)
+            print("Rust Server not installed")
+            exit(1)
+        exit(1)
 
 if args.check:
     print("Checking Rust Server Is Running")

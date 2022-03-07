@@ -1,7 +1,13 @@
 # python-rustserver
 Rust Server Automation Only!
 
-
+## Prerequisites
+* Centos 8
+    * `sudo yum install epel-release -y`
+    * `sudo yum install git ansible python38.x86_64 glibc.i686 libstdc++.i686 wget -y`
+* Ubuntu 64-bit
+    * `sudo dpkg --add-architecture i386; sudo apt update; sudo apt install ansible wget tar netcat lib32gcc1 lib32stdc++6 steamcmd lib32z1 unzip`
+    
 ## Install Requirements
 * Ansible
 * Python3
