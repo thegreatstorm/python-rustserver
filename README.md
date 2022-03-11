@@ -44,7 +44,11 @@ Rust Server Automation Only!
     * Destroys server folder
 * `--check`
     * Checks by server_identity if server is running.
-    
+* `--change_map --seed="" --size=""`
+    * Change seed and size and requires server restart. 
+    Make sure you do a partial_wipe to clear out old map data. Saves on space.
+
 ## FAQ
 * Can this run inside a docker container?
-    * Yes I have tested this with centos 8 container and was successful.
+    * Runs on Ubuntu Container (Centos no longer supported, but should work.)
+    

@@ -254,4 +254,4 @@ if args.check:
         print("Rust Server not installed.")
         exit(1)
 
-print("")
+print("Make sure you type in --help to get more info!")
