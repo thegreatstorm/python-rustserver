@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   tasks:
+  - name: "Setting up LD_LIBRARY_PATH"
+    shell: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:`dirname $0`/RustDedicated_Data/Plugins:`dirname $0`/RustDedicated_Data/Plugins/x86_64
   - name: "Starting up rust server. Log: {{app_dir}}/logs/rustserver-services.log"
     shell: cd {{app_dir}}/rustserver/ && nohup ./RustDedicated -batchmode +server.ip 0.0.0.0 +server.port {{server_port}} +server.tickrate 10 +server.hostname "{{hostname}}" +server.identity "{{identity}}" +server.seed {{seed}} +server.maxplayers {{players}} +server.worldsize {{worldsize}} +server.saveinterval 600 +rcon.ip 0.0.0.0 +rcon.port {{rcon_port}} +rcon.password "{{rcon_password}}" +server.description "{{description}}" +server.headerimage "{{header_image}}" +app.port {{app_port}} +server.url "{{server_url}}" >> {{app_dir}}/logs/rustserver-services.log 2>&1&
